@@ -19,11 +19,13 @@ export const USER_ADDRESS = '0x2e0049b05217290087BA613290BaCC761d7adD04';
 export const ERC20_ADDRESS = '0x831Ae6cd498342A7aCf3F1067f7E46F9E69a0001';
 export const ERC721_ADDRESS = '0x69e41faF363A6Be4Cde76268315F48Ef0034C8b8';
 
-export const asserEq = (a: string | number | object, b: string | number | object) => {
+type assert = string | number | object | bigint | boolean | undefined | null;
+
+export const asserEq = (a: assert, b: assert) => {
   if(a !== b) throw new Error(`${a} !== ${b}`);
 };
   
-export const assert = (a: string | number | object) => {
+export const assert = (a: assert) => {
   if(!a) throw new Error(`${a} is false`);
 };
 
@@ -32,8 +34,8 @@ export type Params = {
   signer: ethers.Signer,
   address: string,
   abi: string[]
-  value: bigint
-  gasLimit?: number
+  value?: bigint
+  gasLimit?: bigint
 };
 
 export const methodMan = (method: string, params: Params) => {

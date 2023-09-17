@@ -14,7 +14,7 @@ import {
 
 import { provider, signer, assert, Params, CHAMBER_ADDRESS, USER_ADDRESS } from '../helpers';
 
-const params: Params = { provider, signer, address: CHAMBER_ADDRESS, abi: ChamberABI, value: 0n };
+const params: Params = { provider, signer, address: CHAMBER_ADDRESS, abi: ChamberABI };
 
 describe('Chamber Tests', () => {
 
@@ -58,7 +58,6 @@ describe('Chamber Tests', () => {
     const target = [USER_ADDRESS];
     const value = [100_000_000_000n];
     const data = ['0x'];
-    params.gasLimit = 100000;
     const result = await createProposal(target, value, data, params);
     assert(result);
   });

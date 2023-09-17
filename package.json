@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts -w --watch-files '**/*.ts'",
+    "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts",
+    "test:watch": "ts-mocha -p tsconfig.json src/**/*.spec.ts -w --watch-files '**/*.ts'",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",

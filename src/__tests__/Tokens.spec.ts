@@ -1,9 +1,9 @@
-import { balanceOf, approve, allowance, publicMint, transfer, Erc20ABI } from '../index';
+import { balanceOf, approve, allowance, publicMint, transfer, TokensABI } from '../index';
 import { provider, signer, assert, USER_ADDRESS, ERC20_ADDRESS, ERC721_ADDRESS, CHAMBER_ADDRESS } from '../helpers';
 
 describe('Token Tests', () => {
 
-	const params = { provider, signer, address: ERC20_ADDRESS, abi: Erc20ABI, value: 0n };
+	const params = { provider, signer, address: ERC20_ADDRESS, abi: TokensABI, value: 0n };
 
 	it('should get the ERC20 balanceOf of address', async () => {
 		const result = await balanceOf(USER_ADDRESS, params);
